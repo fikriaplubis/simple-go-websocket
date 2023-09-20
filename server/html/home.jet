@@ -33,15 +33,4 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 
-<script>
-    let socket = null;
-
-    document.addEventListener("DOMContentLoaded", function () {
-        socket = new WebSocket("ws://127.0.0.1:8080/ws");
-
-        socket.onopen = () => {
-            console.log("Successfully connected");
-        }
-    })
-</script>
 </html>

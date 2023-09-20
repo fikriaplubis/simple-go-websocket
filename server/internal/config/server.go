@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/CloudyKit/jet/v6"
+	// "github.com/CloudyKit/jet/v6"
 	"github.com/bmizerany/pat"
 	"github.com/gorilla/websocket"
 )
@@ -12,7 +12,7 @@ import (
 type server struct {
 	Router   http.Handler
 	Upgrader websocket.Upgrader
-	Views    *jet.Set
+	// Views    *jet.Set
 }
 
 func MakeServer() *server {
@@ -22,15 +22,15 @@ func MakeServer() *server {
 		CheckOrigin:     func(r *http.Request) bool { return true },
 	}
 
-	var v = jet.NewSet(
-		jet.NewOSFileSystemLoader("./html"),
-		jet.InDevelopmentMode(),
-	)
+	// var v = jet.NewSet(
+	// 	jet.NewOSFileSystemLoader("./html"),
+	// 	jet.InDevelopmentMode(),
+	// )
 
 	s := &server{
 		Router:   pat.New(),
 		Upgrader: u,
-		Views:    v,
+		// Views:    v,
 	}
 
 	return s

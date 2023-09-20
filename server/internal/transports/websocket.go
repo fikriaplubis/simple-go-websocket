@@ -16,12 +16,12 @@ func NewHandler(service services.Service) *Handler {
 	return &Handler{service}
 }
 
-func (h *Handler) Home(w http.ResponseWriter, r *http.Request) {
-	err := h.Service.RenderPage(w, "home.jet", nil)
-	if err != nil {
-		log.Println(err)
-	}
-}
+// func (h *Handler) Home(w http.ResponseWriter, r *http.Request) {
+// 	err := h.Service.RenderPage(w, "home.jet", nil)
+// 	if err != nil {
+// 		log.Println(err)
+// 	}
+// }
 
 func (h *Handler) WsEndpoint(w http.ResponseWriter, r *http.Request) {
 	ws, err := h.Service.UpgradeConnection(w, r)
